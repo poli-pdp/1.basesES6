@@ -74,3 +74,14 @@ let totalLibertadores = FPC.filter((eq) => eq.libertadores > 0).reduce(
   0
 );
 console.log(totalLibertadores);
+
+let totalTitulos = FPC.reduce(
+  (res, eq) => {
+    return {
+      ligas: res.ligas + eq.ligas,
+      libertadores: res.libertadores + eq.libertadores,
+    };
+  },
+  { ligas: 0, libertadores: 0 }
+);
+console.log(totalTitulos);
